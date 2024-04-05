@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/styles.css" />
@@ -16,16 +15,24 @@
     <title>Search Images</title>
   </head>
   <body>
-    <form action="submit" class="form">
+    <form action="submit" class="search-form" id="search-form">
       <div class="form-group">
-        <label for="images" class="label"> </label>
-        <input type="text" name="images" class="search-images" required placeholder="Search images...">
+        <label form="images" class="label"> </label>
+        <input 
+          class="search-images" 
+          type="text"
+          name="images" 
+          placeholder="Search images..." required >
       </div>
-      <button class="search-button">Search</button>
+      <button class="search-button" type="submit">Search</button>
       
     </form>
+
+   <div class="gallery"></div>
+    
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/pixabay-api.js"></script>
     <script type="module" src="./js/render-functions.js"></script>
+    <script src="iziToast.min.js" type="javascript"></script>
   </body>
 </html>
