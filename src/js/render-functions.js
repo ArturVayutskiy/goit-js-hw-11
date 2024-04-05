@@ -1,20 +1,21 @@
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function renderImages(images) {
-    const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = ''; 
+  const photoGallery = document.querySelector('.gallery');
+  photoGallery.innerHTML = '';
 
-    const cardMarkup = images.map(
-        ({
-          webformatURL,
-          largeImageURL,
-          tags,
-          likes,
-          views,
-          comments,
-          downloads,
-        }) => `<li class="card-item">
+  const cardMarkup = images
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `<li class="card-item">
     <a href=${largeImageURL}
       ><img src=${webformatURL} alt="${tags}" height="200"/>
       <ul class="card-info">
@@ -37,15 +38,18 @@ export function renderImages(images) {
       </ul></a
     >
   </li>`
-    ).join('');
+    )
+    .join('');
 
-    gallery.insertAdjacentHTML('beforeend', cardMarkup);
+  photoGallery.insertAdjacentHTML('beforeend', cardMarkup);
 
-    const optionsGallery = {
-        captionsData: 'alt',
-        captionDelay: 250
-    }
+  const optionsGallery = {
+    captionsData: 'alt',
+    captionDelay: 250,
+  };
 
-    let lightbox = new SimpleLightbox('.gallery a', optionsGallery);
-    gallery.on('show.simplelightbox');
+  let gallery = new SimpleLightbox('.gallery a', optionsGallery);
+  gallery.refresh();
+
 }
+

@@ -16,20 +16,22 @@ form.addEventListener('submit', function (event) {
   }
 
   pixabayAPI(value)
-    .then(data => {
-      if (data.hits.length === 0) {
-        iziToast.error({
-          title: 'Error!',
-          message:
-            'Sorry, there are no images matching your search query. Please try again!',
-          position: 'topRight',
-        });
-        
-      }
-      renderImages(data.hits);;
-    })
-    .catch(error => {
-      console.error('Error fetching images:', error);
-      throw error;
-    });
+  .then(data => {
+    if (data.hits.length === 0) {
+      iziToast.error({
+        title: 'Error!',
+        message:
+          'Sorry, there are no images matching your search query. Please try again!',
+        position: 'topRight',
+      });
+    }
+    renderImages(data.hits);
+  })
+
+  .catch(error => {
+    console.error('Error fetching images:', error);
+    throw error;
+  }); 
+    searchInput.value = "";
 });
+

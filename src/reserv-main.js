@@ -62,3 +62,26 @@
 //         })
 //         .catch(error => console.error('Error fetching images:', error));
 // });
+
+
+
+
+// NUMBER 2
+// pixabayAPI(value).then(data => {
+//     if (data.hits.length === 0) {
+//       iziToast.error({
+//         title: 'Error!',
+//         message:
+//           'Sorry, there are no images matching your search query. Please try again!',
+//         position: 'topRight',
+//       });
+//     }
+//     renderImages(data.hits);
+//   });
+//   searchInput.value = "";
+//   // Консоль в інструментах розробника не містить помилок, попереджень і консоль логів
+//   // .catch(error => {
+//   //   console.error('Error fetching images:', error);
+//   //   throw error;
+//   // }); 
+// });
