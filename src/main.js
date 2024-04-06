@@ -37,9 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error fetching images:', error);
         throw error;
       }).finally(() => {
-        setTimeout(() => {
       loader.style.display = 'none';
-    }, 1000);
     });
     searchInput.value = '';
   });
